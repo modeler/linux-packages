@@ -8,7 +8,7 @@ Homepage: http://www.retroarch.com/
 #Vcs-Git: git://anonscm.debian.org/collab-maint/retroarch.git
 #Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/retroarch.git
 
-Package: retroarch
+Package: retroarch-rpi
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Simple frontend for the libretro library
