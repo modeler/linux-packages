@@ -1,0 +1,6 @@
+override_dh_auto_clean:
+	touch config.mk
+	$(MAKE) clean
+
+override_dh_auto_configure:
+	./configure --prefix=/usr
