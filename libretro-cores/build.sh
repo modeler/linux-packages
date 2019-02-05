@@ -19,11 +19,15 @@ libretro-uae \
 vice-libretro \
 "
 
-for core in ${CORES}; do
+mkdir cores
+for core in ${CORES}; do 
   git clone https://github.com/libretro/${core}
   cd ${core}
-  make -f Makefile.libretro || make
+  if [[ "${core}" == "fbalpha2012" ]]; then
+    sh ./compile_libretro.sh
+  else
+    make -f Makefile.libretro || make
+  fi
+  mv *.so ../cores
   cd ..
 done
-
-find . -name "*.so"
