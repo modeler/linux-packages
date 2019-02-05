@@ -1,0 +1,20 @@
+Source: retroarch
+Section: games
+Priority: optional
+Maintainer: Daniel Tootill <dantootill@gmail.com>
+Build-Depends: debhelper (>=9), autotools-dev, libasound2-dev, libudev-dev, zlib1g-dev
+Standards-Version: 3.9.6
+Homepage: http://www.retroarch.com/
+#Vcs-Git: git://anonscm.debian.org/collab-maint/retroarch.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/retroarch.git
+
+Package: retroarch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Simple frontend for the libretro library
+ RetroArch is an open source, multi-platform frontend for the libretro API.
+ It can be used as a modular multi emulator system, game engine, media player
+ and 3D technical demonstration. These features are available through
+ libretro cores.
+ .
+ It provides three built-in GUI: RGUI, XMB and GLUI.
