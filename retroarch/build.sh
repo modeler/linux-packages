@@ -7,7 +7,7 @@ tar xf retroarch_${VERSION}.orig.tar.gz
 mv RetroArch-${VERSION} retroarch-${VERSION}
 touch retroarch_${VERSION}-1.dsc
 cd retroarch-${VERSION}
-dh_make
+dh_make -s -y
 cat ../control > debian/control
 cat ../rules >> debian/rules
 dpkg-buildpackage -b
