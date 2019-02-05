@@ -1,2 +1,1 @@
-# debian-packages
-# debian-packages
+A handful of retro-computing packages for Debian-based Linux distros.
