@@ -1,12 +1,17 @@
 #!/bin/bash
 
 VERSION=1.7.6
-wget https://github.com/libretro/RetroArch/archive/v${VERSION}.tar.gz
-mv v${VERSION}.tar.gz retroarch_${VERSION}.orig.tar.gz
-tar xf retroarch_${VERSION}.orig.tar.gz
+SOURCE=https://github.com/libretro/RetroArch/archive
+PACKAGE=$(basename $(pwd))
+
+wget ${SOURCE}/v${VERSION}.tar.gz
+
+mv v${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
+tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
+
 mv RetroArch-${VERSION} retroarch-${VERSION}
-touch retroarch_${VERSION}-1.dsc
-cd retroarch-${VERSION}
+
+cd ${PACKAGE}-${VERSION}
 dh_make -s -y
 cat ../control > debian/control
 cat ../rules >> debian/rules
