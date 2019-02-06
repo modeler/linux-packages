@@ -2,12 +2,15 @@ grep -q 'Hardware.\+BCM2835' /proc/cpuinfo && export platform=rpi2
 
 CORES="\
 beetle-pce-fast-libretro \
+cannonball \
 libretro-fceumm \
 fbalpha2012 \
 fuse-libretro \
 gambatte-libretro \
-Genesis-Plus-GX
+Genesis-Plus-GX \
+mame2000-libretro \
 mame2003-plus-libretro \
+nestopia \
 pcsx_rearmed \
 picodrive \
 libretro-prboom
