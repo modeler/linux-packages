@@ -29,6 +29,10 @@ for core in ${CORES}; do
   if [[ "${core}" == "fbalpha2012" ]]; then
     sh ./compile_libretro.sh make
     mv svn-current/trunk/fbalpha2012_libretro.so ../cores
+  elif [[ "${core}" == "nestopia" ]]; then
+    cd libretro && make
+    mv *.so ../../cores
+    cd ..
   else
     make -f Makefile.libretro || make
     mv *.so ../cores
