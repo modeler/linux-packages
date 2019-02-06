@@ -24,7 +24,7 @@ for core in ${CORES}; do
   git clone https://github.com/libretro/${core}
   cd ${core}
   if [[ "${core}" == "fbalpha2012" ]]; then
-    sh ./compile_libretro.sh
+    sh ./compile_libretro.sh make
   else
     make -f Makefile.libretro || make
   fi
