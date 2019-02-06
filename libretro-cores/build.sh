@@ -28,9 +28,10 @@ for core in ${CORES}; do
   cd ${core}
   if [[ "${core}" == "fbalpha2012" ]]; then
     sh ./compile_libretro.sh make
+    mv svn-current/trunk/fbalpha2012_libretro.so ../cores
   else
     make -f Makefile.libretro || make
+    mv *.so ../cores
   fi
-  mv *.so ../cores
   cd ..
 done
