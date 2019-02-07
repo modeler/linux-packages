@@ -1,4 +1,4 @@
-grep -q 'Hardware.\+BCM2835' /proc/cpuinfo && export platform=rpi2
+#!/bin/bash
 
 CORES="\
 beetle-pce-fast-libretro \
@@ -22,20 +22,22 @@ libretro-uae \
 vice-libretro \
 "
 
-mkdir cores
+grep -q 'Hardware.\+BCM2835' /proc/cpuinfo && export platform=rpi2
+
+test -d cores || mkdir cores
 for core in ${CORES}; do 
   git clone https://github.com/libretro/${core}
   cd ${core}
   if [[ "${core}" == "fbalpha2012" ]]; then
     sh ./compile_libretro.sh make
-    mv svn-current/trunk/fbalpha2012_libretro.so ../cores
+    mv svn-current/trunk/fbalpha2012_libretro.so ../cores/
   elif [[ "${core}" == "nestopia" ]]; then
     cd libretro && make
     mv *.so ../../cores
     cd ..
   else
     make -f Makefile.libretro || make
-    mv *.so ../cores
+    mv *.so ../cores/
   fi
   cd ..
 done
