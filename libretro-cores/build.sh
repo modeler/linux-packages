@@ -22,21 +22,23 @@ libretro-uae \
 vice-libretro \
 "
 
+MAKE="make -j4"
+
 grep -q 'Hardware.\+BCM2835' /proc/cpuinfo && export platform=rpi2
 
 test -d cores || mkdir cores
 for core in ${CORES}; do 
-  git clone https://github.com/libretro/${core}
+  git clone https://github.com/libretro/${core} || exit 1
   cd ${core}
   if [[ "${core}" == "fbalpha2012" ]]; then
-    sh ./compile_libretro.sh make
+    sh ./compile_libretro.sh ${MAKE}
     mv svn-current/trunk/fbalpha2012_libretro.so ../cores/
   elif [[ "${core}" == "nestopia" ]]; then
-    cd libretro && make
+    cd libretro && ${MAKE}
     mv *.so ../../cores
     cd ..
   else
-    make -f Makefile.libretro || make
+    ${MAKE} -f Makefile.libretro || make
     mv *.so ../cores/
   fi
   cd ..
