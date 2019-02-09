@@ -38,7 +38,7 @@ for core in ${CORES}; do
     mv *.so ../../cores
     cd ..
   else
-    ${MAKE} -f Makefile.libretro || make
+    ${MAKE} -f Makefile.libretro || ${MAKE}
     mv *.so ../cores/
   fi
   cd ..
