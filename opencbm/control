@@ -1,0 +1,16 @@
+Source: opencbm
+Section: misc
+Priority: extra
+Maintainer: Daniel Tootill <dantootill@gmail.com>
+Build-Depends: debhelper (>= 9),libusb-dev,libncurses5-dev,libelf-dev,linux-headers-$(uname -r)
+Standards-Version: 3.9.8
+Homepage: http://spiro.trikaliotis.net/opencbm
+#Vcs-Git: https://anonscm.debian.org/collab-maint/opencbm.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/opencbm.git
+
+Package: opencbm
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Support Package for Retro Devices
+ OpenCBM allows access to Commodore (C64) storage devices VIC 1540, 1541, 1570,
+ 1571, or even 1581 floppy drive
