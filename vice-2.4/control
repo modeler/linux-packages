@@ -1,0 +1,20 @@
+Source: vice
+Section: otherosfs
+Priority: optional
+Maintainer: Daniel Tootill <dantootill@gmail.com>
+Build-Depends: debhelper (>=9), autotools-dev, libgtk2.0-dev, libgtkglext1-dev, libasound2-dev, libvte-dev
+Standards-Version: 3.9.6
+Homepage: http://vice-emu.sourceforge.net/
+#Vcs-Git: git://anonscm.debian.org/collab-maint/vice.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/vice.git
+
+Package: vice
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, gtk2-engines-pixbuf
+Description: Versatile Commodore Emulator
+ VICE emulates well the hardware of the Commodore Business Machines of
+ the pre-Amiga era. Supported are the various Pets, the VIC-20, the
+ Commodore 64, the Commodore 128, the CBM-II series, and the PLUS/4.
+ .
+ Some alternate keywords for the above: VIC20, C64, C=64, C64 DTV, C128,
+ C=128, CBM-500, CBM-600, CBM-700, PLUS4.

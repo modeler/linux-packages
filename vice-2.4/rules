@@ -1,0 +1,7 @@
+override_dh_auto_configure:
+	./configure --prefix=/usr --enable-gnomeui --disable-ffmpeg --without-residfp
+
+override_dh_auto_install:
+	test -r ./mkinstalldirs || ln -s /usr/share/automake-1.15/mkinstalldirs
+	$(MAKE) install DESTDIR=${HOME}/Build/vice-2.4/debian/vice
+	mv ${HOME}/Build/vice-2.4/debian/vice/usr/lib64 ${HOME}/Build/vice-2.4/debian/vice/usr/lib
