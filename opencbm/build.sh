@@ -12,7 +12,7 @@ tar xf ${PACKAGE}_${VERSION}.orig.tar.bz2
 cd ${PACKAGE}-${VERSION}
 rm -rf debian
 dh_make -s -y
-cat ../control > debian/control
+sed "s@CHANGEME@$(uname -r)@" ../control > debian/control
 sed "s@CHANGEME@$(pwd)@g" ../rules >> debian/rules
 sed -i "s/usr\/local/usr/" opencbm/LINUX/config.make
 dpkg-buildpackage -b
