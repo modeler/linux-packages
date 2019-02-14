@@ -3,5 +3,5 @@ override_dh_auto_configure:
 
 override_dh_auto_install:
 	test -r ./mkinstalldirs || ln -s /usr/share/automake-1.15/mkinstalldirs
-	$(MAKE) install DESTDIR=${HOME}/Build/vice-2.4/debian/vice
-	mv ${HOME}/Build/vice-2.4/debian/vice/usr/lib64 ${HOME}/Build/vice-2.4/debian/vice/usr/lib
+	$(MAKE) install DESTDIR=CHANGEME/debian/vice
+	mv CHANGEME/debian/vice/usr/lib64 CHANGEME/debian/vice/usr/lib
