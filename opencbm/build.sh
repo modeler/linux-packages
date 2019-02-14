@@ -8,12 +8,13 @@ wget ${SOURCE}
 
 mv ${PACKAGE}-${VERSION}.tar.bz2 ${PACKAGE}_${VERSION}.orig.tar.bz2
 tar xf ${PACKAGE}_${VERSION}.orig.tar.bz2
-sed -i "s/usr\/local/usr/" ${PACKAGE}/LINUX/config.make
 
 cd ${PACKAGE}-${VERSION}
+rm -rf debian
 dh_make -s -y
 cat ../control > debian/control
 sed "s@CHANGEME@$(pwd)@g" ../rules >> debian/rules
+sed -i "s/usr\/local/usr/" opencbm/LINUX/config.make
 dpkg-buildpackage -b
 
 exit 0
