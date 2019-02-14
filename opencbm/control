@@ -2,7 +2,7 @@ Source: opencbm
 Section: misc
 Priority: extra
 Maintainer: Daniel Tootill <dantootill@gmail.com>
-Build-Depends: debhelper (>= 9),libusb-dev,libncurses5-dev,libelf-dev,linux-headers-$(uname -r)
+Build-Depends: debhelper (>= 9),libusb-dev,libncurses5-dev,libelf-dev,linux-headers,cc65
 Standards-Version: 3.9.8
 Homepage: http://spiro.trikaliotis.net/opencbm
 #Vcs-Git: https://anonscm.debian.org/collab-maint/opencbm.git

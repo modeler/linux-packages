@@ -6,8 +6,8 @@ SOURCE=https://sourceforge.net/projects/${PACKAGE}/files/${PACKAGE}/${PACKAGE}-$
 
 wget ${SOURCE}
 
-mv ${PACKAGE}-${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
+mv ${PACKAGE}-${VERSION}.tar.bz2 ${PACKAGE}_${VERSION}.orig.tar.bz2
+tar xf ${PACKAGE}_${VERSION}.orig.tar.bz2
 sed -i "s/usr\/local/usr/" ${PACKAGE}/LINUX/config.make
 
 cd ${PACKAGE}-${VERSION}
