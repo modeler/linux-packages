@@ -4,4 +4,4 @@ override_dh_auto_build:
 override_dh_auto_install:
 	mkdir -p debian/opencbm/etc/udev/rules.d
 	mkdir -p debian/opencbm/usr/include
-	$(MAKE) -f LINUX/Makefile install-opencbm install-plugin-xu1541 install-plugin-xum1541 DESTDIR=CHANGEME/debian/opencbm
+	$(MAKE) -f LINUX/Makefile install install-plugin-xu1541 install-plugin-xum1541 DESTDIR=CHANGEME/debian/opencbm
