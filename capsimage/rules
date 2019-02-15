@@ -1,0 +1,2 @@
+override_dh_auto_install:
+	mv libcapsimage.so.4.2 libcapsimage.so
