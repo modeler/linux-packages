@@ -15,6 +15,7 @@ dh_make -s -y
 cat ../control > debian/control
 cat ../rules >> debian/rules
 cat ../install > debian/install
+sed -i '21iimport std.algorithm : sort;' src/ui/dialogs.d
 dpkg-buildpackage -b
 
 exit 0
