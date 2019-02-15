@@ -1,0 +1,17 @@
+Source: cc65
+Section: development
+Priority: extra
+Maintainer: Daniel Tootill <dantootill@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: https://cc65.github.io/cc65/
+#Vcs-Git: https://anonscm.debian.org/collab-maint/cc65.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/cc65.git
+
+Package: cc65
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: C Compiler for 6502 Family Microprocessors
+ cc65 is a complete cross development package for 65(C)02 systems, including a
+ powerful macro assembler, a C compiler, linker, librarian and several other
+ tools.
