@@ -1,0 +1,25 @@
+Source: hatari
+Section: games
+Priority: optional
+Maintainer: Dan Tootill <dantootill@gmail.com>
+Build-Depends: debhelper (>= 9), autotools-dev, cmake, libsdl2-dev, libpng-dev, portaudio19-dev, libportmidi-dev, libreadline-dev, capsimage
+Standards-Version: 3.9.8
+Homepage: https://hatari.tuxfamily.org/
+#Vcs-Git: https://anonscm.debian.org/collab-maint/hatari.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/hatari.git
+
+Package: hatari
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: An Atari ST/STE/TT/Falcon emulator suitable for playing games
+ Hatari is an emulator for the Atari ST, STE, TT and Falcon computers.
+ .
+ The Atari ST was a 16/32 bit computer system which was first released by
+ Atari in 1985. Using the Motorola 68000 CPU, it was a very popular computer
+ having quite a lot of CPU power at that time.
+ .
+ Unlike most other open source ST emulators which try to give you a good
+ environment for running GEM applications, Hatari tries to emulate the hardware
+ as close as possible so that it is able to run most of the old Atari games
+ and demos.  Because of this, it may be somewhat slower than less accurate
+ Emulators.
