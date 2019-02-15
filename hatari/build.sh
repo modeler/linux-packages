@@ -2,7 +2,7 @@
 
 PACKAGE=$(basename $(pwd))
 VERSION=2.0.0
-SOURCE=http://download.tuxfamily.org/${PACKAGE}/${VERSION}/${PACKAGE}-${VERSION}.tar.bz2
+SOURCE=http://download.tuxfamily.org/hatari/${VERSION}/${PACKAGE}-${VERSION}.tar.bz2
 
 sudo apt -y install cmake portaudio19-dev libportmidi-dev libreadline-dev
 

@@ -1,0 +1,18 @@
+Source: xa
+Section: development
+Priority: extra
+Maintainer: Daniel Tootill <dantootill@nospam.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: http://www.floodgap.com/retrotech/xa/
+#Vcs-Git: https://anonscm.debian.org/collab-maint/xa.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/xa.git
+
+Package: xa
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Andre Fachat's open-source 6502 cross assembler
+ xa is a high-speed, two-pass portable cross-assembler. It understands
+ mnemonics and generates code for NMOS 6502s (such as 6502A, 6504, 6507, 6510,
+ 7501, 8500, 8501, 8502 ...), CMOS 6502s (65C02 and Rockwell R65C02) and the
+ 65816.

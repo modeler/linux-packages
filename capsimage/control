@@ -1,7 +1,7 @@
 Source: capsimage
 Section: development
 Priority: optional
-Maintainer: Dan Tootill <dantootill@gmail.com>
+Maintainer: Dan Tootill <dantootill@nospam.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.8
 Homepage: http://www.softpres.org

@@ -1,7 +1,7 @@
 Source: retroarch
 Section: games
 Priority: optional
-Maintainer: Daniel Tootill <dantootill@gmail.com>
+Maintainer: Daniel Tootill <dantootill@nospam.org>
 Build-Depends: debhelper (>=9), autotools-dev, libasound2-dev, libudev-dev, zlib1g-dev
 Standards-Version: 3.9.6
 Homepage: http://www.retroarch.com/

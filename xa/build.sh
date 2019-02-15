@@ -1,18 +1,18 @@
 #!/bin/bash
 
 PACKAGE=$(basename $(pwd))
-VERSION=2.16
-SOURCE=https://github.com/cc65/cc65/archive/V${VERSION}.tar.gz
+VERSION=2.3.9
+SOURCE=http://www.floodgap.com/retrotech/xa/dists/${PACKAGE}-${VERSION}.tar.gz
 
 wget ${SOURCE}
 
-mv V${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
+mv ${PACKAGE}-${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
 tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
 
 cd ${PACKAGE}-${VERSION}
 dh_make -s -y
 cat ../control > debian/control
-export prefix=/usr
+cat ../rules >> debian/rules
 dpkg-buildpackage -b
 
 exit 0

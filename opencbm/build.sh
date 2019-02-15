@@ -2,7 +2,7 @@
 
 PACKAGE=$(basename $(pwd))
 VERSION=0.4.99.99
-SOURCE=https://sourceforge.net/projects/${PACKAGE}/files/${PACKAGE}/${PACKAGE}-${VERSION}/${PACKAGE}-${VERSION}.tar.bz2
+SOURCE=https://sourceforge.net/projects/opencbm/files/${PACKAGE}/${PACKAGE}-${VERSION}/${PACKAGE}-${VERSION}.tar.bz2
 
 wget ${SOURCE}
 

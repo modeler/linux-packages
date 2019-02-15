@@ -1,8 +1,10 @@
 #!/bin/bash
 
-PACKAGE=vice
-VERSION=2.4
-SOURCE=http://sourceforge.net/projects/vice-emu/files/releases/vice-${VERSION}.tar.gz/download
+PACKAGE=$(basename $(pwd))
+VERSION=3.2
+SOURCE=http://sourceforge.net/projects/vice-emu/files/releases/${PACKAGE}-${VERSION}.tar.gz/download
+
+sudo apt install -y yasm libgtk2.0-dev libgtkglext1-dev libx264-dev libmp3lame-dev libxaw7-dev libreadline-dev libavresample-dev ffmpeg
 
 wget --content-disposition ${SOURCE}
 
