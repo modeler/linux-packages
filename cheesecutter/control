@@ -1,0 +1,17 @@
+Source: cheesecutter
+Section: universe/sound
+Priority: optional
+Maintainer: Daniel Tootill <dantootill@gmail.com>
+Build-Depends: debhelper (>=9), acme-crossass, ldc
+Standards-Version: 3.9.6
+Homepage: https://github.com/theyamo/CheeseCutter
+#Vcs-Git: git://anonscm.debian.org/collab-maint/cheesecutter.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/cheesecutter.git
+
+Package: cheesecutter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libsdl1.2debian
+Description: CheeseCutter SID music editor
+ CheeseCutter is a tracker program for composing music for the SID chip. It
+ uses the reSID engine for SID emulation. The packed files can be played on a
+ real C64.

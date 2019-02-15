@@ -1,0 +1,17 @@
+Source: acme-crossass
+Section: devel
+Priority: optional
+Maintainer: Daniel Tootill <dantootill@nospam.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://sourceforge.net/p/acme-crossass
+#Vcs-Git: git://anonscm.debian.org/collab-maint/acme.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/acme.git
+
+Package: acme-crossass
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Multi-platform cross assembler for 6502/6510/65816 CPU
+ ACME is a free cross assembler released under the GNU GPL. It can produce code
+ for the following processors: 6502, 6510 (including illegal opcodes), 65c02
+ and 65816.
