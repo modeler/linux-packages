@@ -1,0 +1,17 @@
+Source: tapclean
+Section: misc
+Priority: optional
+Maintainer: Daniel Tootill <dantootill@nospam.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://sourceforge.net/projects/tapclean/
+#Vcs-Git: git://anonscm.debian.org/collab-maint/tapclean.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/tapclean.git
+
+Package: tapclean
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Commodore Tape Preservation / Restoration Tool
+ TAPClean is a Commodore tape preservation / restoration tool. It will check,
+ repair, and remaster Commodore 64 and VIC 20 TAP or DC2N DMP files (tape
+ images).
