@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 PACKAGE=$(basename $(pwd))
 VERSION=0.37
@@ -6,7 +6,7 @@ SOURCE=https://sourceforge.net/projects/tapclean/files/tapclean/TAPClean%200.37/
 
 wget --content-disposition ${SOURCE}
 
-mv ${PACKAGE}-${VERSION}.tgz ${PACKAGE}_${VERSION}.orig.tar.gz
+mv tapclean-${VERSION}-src.tgz ${PACKAGE}_${VERSION}.orig.tar.gz
 tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
 mv ${PACKAGE} ${PACKAGE}-${VERSION}
 
