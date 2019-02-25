@@ -26,7 +26,7 @@ cd ~/rpmbuild/SPECS && rpmbuild -bb ${PACKAGE}.spec
 ;;
 
 *)
-wget --content-disposition ${TARBALL} --output-file=${PACKAGE}_${VERSION}.orig.tar.gz
+wget --content-disposition ${TARBALL} -O ${PACKAGE}_${VERSION}.orig.tar.gz
 sudo apt install -y libavcodec-dev libavdevice-dev libavformat-dev libgbm-dev libglm-dev libjack-jackd2-dev libswscale-dev libusb-1.0-0-dev libv4l-dev libxml2-dev libvulkan-dev python3-dev qt5-default
 tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
 mv RetroArch-${VERSION} ${PACKAGE}-${VERSION}
