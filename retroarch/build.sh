@@ -13,25 +13,23 @@ else
   DISTRO=debian
 fi
 
-wget --content-disposition ${TARBALL}
-
 case "${DISTRO}" in
 
-arch) makepkg -s
+arch)
+makepkg -s --noconfirm
 ;;
 
-redhat) mv ${TARBALL} ~/rpmbuild/SOURCES
+redhat)
+wget --content-disposition ${TARBALL} --output-file=~/rpmbuild/SOURCES/${PACKAGE}-${VERSION}.tar.gz
 cp ${PACKAGE}.spec ~/rpmbuild/SPECS
 cd ~/rpmbuild/SPECS && rpmbuild -bb ${PACKAGE}.spec
 ;;
 
-*) sudo apt install -y libavcodec-dev libavdevice-dev libavformat-dev libgbm-dev libglm-dev libjack-jackd2-dev libswscale-dev libusb-1.0-0-dev libv4l-dev libxml2-dev libvulkan-dev python3-dev qt5-default
-
-mv ${TARBALL} ${PACKAGE}_${VERSION}.orig.tar.gz
+*)
+wget --content-disposition ${TARBALL} --output-file=${PACKAGE}_${VERSION}.orig.tar.gz
+sudo apt install -y libavcodec-dev libavdevice-dev libavformat-dev libgbm-dev libglm-dev libjack-jackd2-dev libswscale-dev libusb-1.0-0-dev libv4l-dev libxml2-dev libvulkan-dev python3-dev qt5-default
 tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-
 mv RetroArch-${VERSION} ${PACKAGE}-${VERSION}
-
 cd ${PACKAGE}-${VERSION}
 dh_make -s -y
 cat ../control > debian/control
