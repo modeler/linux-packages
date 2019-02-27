@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#
+# 3rd. Identifies the Linux distro and sets up the build environment.
+#
+
 if [[ $(which pacman) ]]; then
   export DISTRO=arch
 elif [[ $(which rpm) ]]; then

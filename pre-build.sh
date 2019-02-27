@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#
+# 2nd. Calls setup.sh, sets default package name and works out dependencies
+# for Debian / apt based distributions.
+#
+
 if [[ -n ${1} ]]; then
   DIR=${1}
 else
