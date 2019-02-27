@@ -14,6 +14,8 @@ fi
 source ${DIR}/setup.sh
 
 export PACKAGE=$(basename $(pwd))
+export SOURCE=${PACKAGE}-${VERSION}
+export TARBALL=${SOURCE}.tar.gz
 
 case "${DISTRO}" in
 

@@ -25,7 +25,7 @@ rpmdev-setuptree
 ;;
 
 debian)
-sudo apt -y install build-essential dh-make git
+sudo apt -y install build-essential dh-make git subversion
 ;;
 
 esac

@@ -1,21 +1,31 @@
 #!/bin/bash
 
-PACKAGE=$(basename $(pwd))
-VERSION=2.9b3
-SOURCE=https://github.com/theyamo/CheeseCutter/archive/v2.9-beta-3.tar.gz
+export VERSION=2.9b3
+URL=https://github.com/theyamo/CheeseCutter/archive
+FILE=v2.9-beta-3.tar.gz
 
-wget ${SOURCE}
+source ../pre-build.sh $(dirname $(pwd))
 
-mv v2.9-beta-3.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-mv CheeseCutter-2.9-beta-3 ${PACKAGE}-${VERSION}
+wget ${URL}/${FILE}
+tar xf ${FILE}
+mv CheeseCutter-2.9-beta-3 ${SOURCE}
+test -f ${TARBALL} || tar cf - ${SOURCE} | gzip > ${TARBALL}
 
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-cat ../control > debian/control
-cat ../rules >> debian/rules
-cat ../install > debian/install
-sed -i '21iimport std.algorithm : sort;' src/ui/dialogs.d
-dpkg-buildpackage -b
+case "${DISTRO}" in
+
+arch)
+../common.sh
+;;
+
+redhat)
+../common.sh
+;;
+
+debian)
+sed -i '21iimport std.algorithm : sort;' ${SOURCE}/src/ui/dialogs.d
+../common.sh
+;;
+
+esac
 
 exit 0

@@ -17,7 +17,8 @@ cd ~/rpmbuild/SPECS && rpmbuild -bb ${PACKAGE}.spec
 ;;
 
 debian)
-cd ${PACKAGE}-${VERSION}
+mv ${TARBALL} ${PACKAGE}_${VERSION}.orig.tar.gz
+cd ${SOURCE}
 dh_make -s -y
 test -f ../install && cat ../install > debian/install
 test -f ../control && cat ../control > debian/control
