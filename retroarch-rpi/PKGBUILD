@@ -1,0 +1,59 @@
+pkgname=retroarch-rpi
+pkgver=1.7.6
+pkgrel=1
+pkgdesc='Reference frontend for the libretro API (Raspberry Pi)'
+arch=('armv7h')
+url='http://www.libretro.com/'
+license=('GPL')
+groups=('libretro')
+provides=('retroarch')
+conflicts=('retroarch')
+depends=('alsa-lib' 'gcc-libs' 'glibc' 'libdrm' 'libgl'
+         'raspberrypi-firmware'  'openal' 'v4l-utils' 'zlib'
+         'libass.so' 'libavcodec.so' 'libavformat.so' 'libavutil.so'
+         'libfreetype.so' 'libswresample.so' 'libswscale.so' 'libudev.so'
+         'libusb-1.0.so')
+makedepends=('vulkan-icd-loader')
+optdepends=('libretro-overlays: Collection of overlays'
+            'libretro-shaders: Collection of shaders'
+            'python: retroarch-cg2glsl'
+            'retroarch-assets-xmb: XMB menu assets')
+backup=('etc/retroarch.cfg')
+source=("https://github.com/libretro/RetroArch/archive/v${pkgver}.tar.gz"
+sha256sums=('SKIP')
+
+prepare() {
+  cd RetroArch-${pkgver}
+}
+
+build() {
+  cd RetroArch-${pkgver}
+
+  export PKG_CONFIG_PATH="/opt/vc/lib/pkgconfig:${PKG_CONFIG_PATH}"
+
+  ./configure \
+    --prefix=/usr \
+    --disable-cg \
+    --disable-jack \
+    --disable-oss \
+    --disable-pulse \
+    --disable-qt \
+    --disable-sdl \
+    --disable-sdl2 \
+    --disable-vg \
+    --disable-wayland \
+    --disable-x11 \
+    --enable-dispmanx \
+    --enable-opengles \
+    --enable-neon \
+    --enable-floathard \
+    --enable-videocore
+
+  make
+}
+
+package() {
+  cd RetroArch-${pkgver}
+
+  make DESTDIR=${pkgdir} install
+}
