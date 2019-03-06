@@ -15,7 +15,7 @@ fi
 case "${DISTRO}" in
 
 arch)
-sudo pacman -S --noconfirm base-devel git
+sudo pacman -S --needed --noconfirm base-devel git
 ;;
 
 redhat)

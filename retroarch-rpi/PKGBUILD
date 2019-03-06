@@ -2,7 +2,7 @@ pkgname=retroarch-rpi
 pkgver=1.7.6
 pkgrel=1
 pkgdesc='Reference frontend for the libretro API (Raspberry Pi)'
-arch=('armv7h')
+arch=('armv6h' 'armv7h')
 url='http://www.libretro.com/'
 license=('GPL')
 groups=('libretro')
@@ -19,7 +19,7 @@ optdepends=('libretro-overlays: Collection of overlays'
             'python: retroarch-cg2glsl'
             'retroarch-assets-xmb: XMB menu assets')
 backup=('etc/retroarch.cfg')
-source=("https://github.com/libretro/RetroArch/archive/v${pkgver}.tar.gz"
+source=("https://github.com/libretro/RetroArch/archive/v${pkgver}.tar.gz")
 sha256sums=('SKIP')
 
 prepare() {

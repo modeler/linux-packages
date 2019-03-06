@@ -1,20 +1,29 @@
 #!/bin/bash
 
-VERSION=1.7.6
-SOURCE=https://github.com/libretro/RetroArch/archive
-PACKAGE=retroarch
+source ../pre-build.sh $(dirname $(pwd))
 
-wget ${SOURCE}/v${VERSION}.tar.gz
+export VERSION=1.7.6
+URL=https://github.com/libretro/RetroArch/archive
+TARBALL=${URL}/v${VERSION}.tar.gz
 
-mv v${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
+case "${DISTRO}" in
+
+arch)
+../common.sh
+;;
+
+redhat)
+wget --content-disposition ${TARBALL} --output-file=~/rpmbuild/SOURCES/${PACKAGE}-${VERSION}.tar.gz
+../common.sh
+;;
+
+debian)
+wget --content-disposition ${TARBALL} -O ${PACKAGE}_${VERSION}.orig.tar.gz
 tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-
 mv RetroArch-${VERSION} ${PACKAGE}-${VERSION}
+../common.sh
+;;
 
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-cat ../control > debian/control
-cat ../rules >> debian/rules
-dpkg-buildpackage -b
+esac
 
 exit 0
