@@ -1,7 +1,7 @@
 Source: cheesecutter
 Section: universe/sound
 Priority: optional
-Maintainer: Daniel Tootill <dantootill@gmail.com>
+Maintainer: Daniel Tootill <dantootill@nospam.org>
 Build-Depends: debhelper (>=9), acme-crossass, ldc
 Standards-Version: 3.9.6
 Homepage: https://github.com/theyamo/CheeseCutter

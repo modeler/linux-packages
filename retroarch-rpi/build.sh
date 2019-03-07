@@ -1,29 +1,13 @@
 #!/bin/bash
 
-source ../pre-build.sh $(dirname $(pwd))
+PACKAGE=retroarch
+VERSION=1.7.6
+URL=https://github.com/libretro/RetroArch/archive/v${VERSION}.tar.gz
+ARCHIVE=RetroArch-${VERSION}.tar.gz
+SOURCE=RetroArch-${VERSION}
 
-export VERSION=1.7.6
-URL=https://github.com/libretro/RetroArch/archive
-TARBALL=${URL}/v${VERSION}.tar.gz
+export PACKAGE VERSION URL ARCHIVE SOURCE
 
-case "${DISTRO}" in
-
-arch)
 ../common.sh
-;;
-
-redhat)
-wget --content-disposition ${TARBALL} --output-file=~/rpmbuild/SOURCES/${PACKAGE}-${VERSION}.tar.gz
-../common.sh
-;;
-
-debian)
-wget --content-disposition ${TARBALL} -O ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-mv RetroArch-${VERSION} ${PACKAGE}-${VERSION}
-../common.sh
-;;
-
-esac
 
 exit 0

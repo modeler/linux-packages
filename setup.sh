@@ -5,22 +5,24 @@
 #
 
 if [[ $(which pacman) ]]; then
-  export DISTRO=arch
+  DISTRO=arch
 elif [[ $(which rpm) ]]; then
-  export DISTRO=redhat
+  DISTRO=redhat
 else
-  export DISTRO=debian
+  DISTRO=debian
 fi
+
+export DISTRO
 
 case "${DISTRO}" in
 
 arch)
-sudo pacman -S --needed --noconfirm base-devel git
+sudo pacman -S --needed --noconfirm base-devel git subversion
 ;;
 
 redhat)
 sudo yum -y groupinstall "Development Tools"
-sudo yum -y install rpmdevtools git
+sudo yum -y install rpmdevtools git subversion
 rpmdev-setuptree
 ;;
 
