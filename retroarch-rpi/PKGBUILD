@@ -1,4 +1,4 @@
-pkgname=retroarch-rpi
+pkgname=retroarch
 pkgver=1.7.6
 pkgrel=1
 pkgdesc='Reference frontend for the libretro API (Raspberry Pi)'
