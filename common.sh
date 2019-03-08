@@ -64,6 +64,7 @@ dh_make -s -y
 test -f ../install && cat ../install > debian/install
 test -f ../control && sed "s@_KERNEL_@$(uname -r)@g" ../control > debian/control
 test -f ../rules && sed "s@_BUILDROOT_@$(pwd)@g" ../rules >> debian/rules
+test -f ../pre_build && bash ../pre_build
 # Install dependencies.
 DEPENDS=()
 for n in $(grep "^Build-Depends:" debian/control | tr -d ","); do
@@ -71,8 +72,7 @@ for n in $(grep "^Build-Depends:" debian/control | tr -d ","); do
     DEPENDS+=(${n})
   fi
 done
-sudo apt-get -y install ${DEPENDS[*]}
-test -f ../pre_build && bash ../pre_build
+sudo apt-get -y install ${DEPENDS[*]} || exit 1
 dpkg-buildpackage -b
 ;;
 

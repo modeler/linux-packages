@@ -1,20 +1,13 @@
 #!/bin/bash
 
-PACKAGE=$(basename $(pwd))
+PACKAGE=vice
 VERSION=3.2
-SOURCE=http://sourceforge.net/projects/vice-emu/files/releases/${PACKAGE}-${VERSION}.tar.gz/download
+URL=http://sourceforge.net/projects/vice-emu/files/releases/vice-${VERSION}.tar.gz/download
+ARCHIVE=vice-${VERSION}.tar.gz
+SOURCE=
 
-sudo apt install -y yasm libgtk2.0-dev libgtkglext1-dev libx264-dev libmp3lame-dev libxaw7-dev libreadline-dev libavresample-dev ffmpeg
+export PACKAGE VERSION URL ARCHIVE SOURCE
 
-wget --content-disposition ${SOURCE}
-
-mv ${PACKAGE}-${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-cat ../control > debian/control
-sed "s@CHANGEME@$(pwd)@g" ../rules >> debian/rules
-dpkg-buildpackage -b
+../common.sh
 
 exit 0

@@ -2,17 +2,12 @@
 
 PACKAGE=vice
 VERSION=2.4
-SOURCE=http://sourceforge.net/projects/vice-emu/files/releases/vice-${VERSION}.tar.gz/download
+URL=http://sourceforge.net/projects/vice-emu/files/releases/vice-${VERSION}.tar.gz/download
+ARCHIVE=vice-${VERSION}.tar.gz
+SOURCE=
 
-wget --content-disposition ${SOURCE}
+export PACKAGE VERSION URL ARCHIVE SOURCE
 
-mv ${PACKAGE}-${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-cat ../control > debian/control
-sed "s@CHANGEME@$(pwd)@g" ../rules >> debian/rules
-dpkg-buildpackage -b
+../common.sh
 
 exit 0

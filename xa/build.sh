@@ -1,18 +1,13 @@
 #!/bin/bash
 
-PACKAGE=$(basename $(pwd))
+PACKAGE=xa
 VERSION=2.3.9
-SOURCE=http://www.floodgap.com/retrotech/xa/dists/${PACKAGE}-${VERSION}.tar.gz
+URL=http://www.floodgap.com/retrotech/xa/dists/${PACKAGE}-${VERSION}.tar.gz
+ARCHIVE=
+SOURCE=
 
-wget ${SOURCE}
+export PACKAGE VERSION URL ARCHIVE SOURCE
 
-mv ${PACKAGE}-${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-cat ../control > debian/control
-cat ../rules >> debian/rules
-dpkg-buildpackage -b
+../common.sh
 
 exit 0
