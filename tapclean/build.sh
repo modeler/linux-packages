@@ -1,20 +1,13 @@
-#!/bin/bash -x
+#!/bin/bash
 
-PACKAGE=$(basename $(pwd))
+PACKAGE=tapclean
 VERSION=0.37
-SOURCE=https://sourceforge.net/projects/tapclean/files/tapclean/TAPClean%200.37/tapclean-${VERSION}-src.tgz/download
+URL=https://sourceforge.net/projects/tapclean/files/tapclean/TAPClean%20${VERSION}/tapclean-${VERSION}-src.tgz/download
+ARCHIVE=tapclean-${VERSION}-src.tgz
+SOURCE=tapclean
 
-wget --content-disposition ${SOURCE}
+export PACKAGE VERSION URL ARCHIVE SOURCE
 
-mv tapclean-${VERSION}-src.tgz ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-mv ${PACKAGE} ${PACKAGE}-${VERSION}
-
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-cat ../control > debian/control
-cat ../rules >> debian/rules
-cat ../install > debian/install
-dpkg-buildpackage -b
+../common.sh
 
 exit 0

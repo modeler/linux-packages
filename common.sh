@@ -1,11 +1,11 @@
 #!/bin/bash
 
+. ../setup.sh
+
 # If no name is given for the downloaded file, use the filename as identified by the URL.
 if [[ "${ARCHIVE}" == "" ]]; then
   ARCHIVE=$(awk -F/ '{print $NF}' <<< ${URL} )
 fi
-
-. ../setup.sh
 
 if [[ "${VERSION}" == "svn" ]]; then
   svn co ${URL} tmp | tee svn.log
@@ -24,6 +24,7 @@ else
 fi
 
 # If no name has been given to the source directory yet, set it to default.
+# This needs to be done after SVN mangling, as VERSION may have been redifined.
 if [[ "${SOURCE}" == "" ]]; then
   SOURCE=${PACKAGE}-${VERSION}
 fi
@@ -42,22 +43,27 @@ cd ~/rpmbuild/SPECS && rpmbuild -bb ${PACKAGE}.spec
 
 debian)
 # Untar or unzip if required, since Debian doesn't do this automatically.
-if [[ "$(awk -F. '{print $NF}' <<< ${ARCHIVE} )" == "zip" ]]; then
+FILETYPE=$(awk -F. '{print $NF}' <<< ${ARCHIVE} )
+if [[ "${FILETYPE}" == "zip" ]]; then
   test -d ${SOURCE} || unzip ${ARCHIVE}
+elif [[ "${FILETYPE}" == "bz2" ]]; then
+  test -d ${SOURCE} || tar xvf ${ARCHIVE}
+  # Create a backup file to match what dh_make is expecting.
+  cp ${ARCHIVE} ${PACKAGE}_${VERSION}.orig.tar.bz2
 else
   test -d ${SOURCE} || tar xvf ${ARCHIVE}
+  # Create a backup file to match what dh_make is expecting.
+  cp ${ARCHIVE} ${PACKAGE}_${VERSION}.orig.tar.gz
 fi
 # Does the extracted source tree match what Debian wants?
 if [[ "${SOURCE}" != "${PACKAGE}-${VERSION}" ]]; then
   mv ${SOURCE} ${PACKAGE}-${VERSION}
 fi
-# Rename the archive file to match what dh_make is expecting.
-mv ${ARCHIVE} $(sed "s/.*-${VERSION}/${PACKAGE}_${VERSION}.orig/" <<< ${ARCHIVE} )
 cd ${PACKAGE}-${VERSION}
 dh_make -s -y
 test -f ../install && cat ../install > debian/install
-test -f ../control && cat ../control > debian/control
-test -f ../rules && cat ../rules >> debian/rules
+test -f ../control && sed "s@_KERNEL_@$(uname -r)@g" ../control > debian/control
+test -f ../rules && sed "s@_BUILDROOT_@$(pwd)@g" ../rules >> debian/rules
 # Install dependencies.
 DEPENDS=()
 for n in $(grep "^Build-Depends:" debian/control | tr -d ","); do
@@ -65,7 +71,8 @@ for n in $(grep "^Build-Depends:" debian/control | tr -d ","); do
     DEPENDS+=(${n})
   fi
 done
-sudo apt install -y ${DEPENDS[*]}
+sudo apt-get -y install ${DEPENDS[*]}
+test -f ../pre_build && bash ../pre_build
 dpkg-buildpackage -b
 ;;
 

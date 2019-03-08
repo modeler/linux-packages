@@ -1,0 +1,1 @@
+sed -i "s/usr\/local/usr/" opencbm/LINUX/config.make
