@@ -1,0 +1,15 @@
+Source: avrdude
+Section: development
+Priority: optional
+Maintainer: Dan Tootill <dan@unknown
+Build-Depends: debhelper (>= 9), autotools-dev
+Standards-Version: 3.9.8
+Homepage: http://savannah.nongnu.org/projects/avrdude
+#Vcs-Git: https://anonscm.debian.org/collab-maint/avrdude.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/avrdude.git
+
+Package: avrdude
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: AVR Downloader/UploaDEr
+ Software for programming Atmel AVR Microcontrollers.

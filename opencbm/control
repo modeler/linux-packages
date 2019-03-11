@@ -1,7 +1,7 @@
 Source: opencbm
 Section: misc
 Priority: extra
-Maintainer: Daniel Tootill <dantootill@nospam.org>
+Maintainer: Dan Tootill <dan@unknown
 Build-Depends: debhelper (>= 9), libusb-dev, libncurses5-dev, libelf-dev, cc65, linux-headers-_KERNEL_
 Standards-Version: 3.9.8
 Homepage: http://spiro.trikaliotis.net/opencbm
