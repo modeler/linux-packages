@@ -1,21 +1,13 @@
 #!/bin/bash
 
-PACKAGE=$(basename $(pwd))
+PACKAGE=capsimage
 VERSION=4.2
-ARCH=$(uname -a | awk '{print $9}')
-SOURCE=http://www.softpres.org/_media/files:ipflib42_linux-${ARCH}.tar.gz
+URL=http://www.softpres.org/_media/files:ipflib42_linux-x86_64.tar.gz
+ARCHIVE=ipflib42_linux-x86_64.tar.gz
+SOURCE=x86_64-linux-gnu-capsimage
 
-wget ${SOURCE}
+export PACKAGE VERSION URL ARCHIVE SOURCE
 
-mv files\:ipflib42_linux-${ARCH}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-mv ${ARCH}-linux-gnu-capsimage ${PACKAGE}-${VERSION}
-
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-cat ../control > debian/control
-cat ../rules >> debian/rules
-cat ../install >> debian/install
-dpkg-buildpackage -b
+../common.sh
 
 exit 0

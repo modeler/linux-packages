@@ -1,18 +1,13 @@
 #!/bin/bash
 
-PACKAGE=$(basename $(pwd))
+PACKAGE=fs-uae
 VERSION=2.8.4
-SOURCE=https://fs-uae.net/stable/${VERSION}/${PACKAGE}-${VERSION}.tar.gz
+URL=https://fs-uae.net/stable/${VERSION}/fs-uae-${VERSION}.tar.gz
+ARCHIVE=
+SOURCE=
 
-sudo apt install -y libsdl2-dev libglib2.0-dev libopenal-dev libfreetype6-dev libxi-dev libpng-dev zlib1g-dev libmpeg2-4-dev libjpeg-dev libglew-dev libxtst-dev
+export PACKAGE VERSION URL ARCHIVE SOURCE
 
-wget ${SOURCE}
-
-mv ${PACKAGE}-${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-dpkg-buildpackage -b
+../common.sh
 
 exit 0

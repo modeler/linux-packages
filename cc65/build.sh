@@ -1,18 +1,13 @@
 #!/bin/bash
 
-PACKAGE=$(basename $(pwd))
+PACKAGE=cc65
 VERSION=2.16
-SOURCE=https://github.com/cc65/cc65/archive/V${VERSION}.tar.gz
+URL=https://github.com/cc65/cc65/archive/V${VERSION}.tar.gz
+ARCHIVE=cc65-2.16.tar.gz
+SOURCE=
 
-wget ${SOURCE}
+export PACKAGE VERSION URL ARCHIVE SOURCE
 
-mv V${VERSION}.tar.gz ${PACKAGE}_${VERSION}.orig.tar.gz
-tar xf ${PACKAGE}_${VERSION}.orig.tar.gz
-
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-cat ../control > debian/control
-export prefix=/usr
-dpkg-buildpackage -b
+../common.sh
 
 exit 0

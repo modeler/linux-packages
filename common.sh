@@ -60,11 +60,11 @@ if [[ "${SOURCE}" != "${PACKAGE}-${VERSION}" ]]; then
   mv ${SOURCE} ${PACKAGE}-${VERSION}
 fi
 cd ${PACKAGE}-${VERSION}
+test -f ../pre_build && source ../pre_build
 dh_make -s -y
 test -f ../install && cat ../install > debian/install
 test -f ../control && sed "s@_KERNEL_@$(uname -r)@g" ../control > debian/control
 test -f ../rules && sed "s@_BUILDROOT_@$(pwd)@g" ../rules >> debian/rules
-test -f ../pre_build && bash ../pre_build
 # Install dependencies.
 DEPENDS=()
 for n in $(grep "^Build-Depends:" debian/control | tr -d ","); do

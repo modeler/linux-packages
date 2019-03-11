@@ -1,21 +1,13 @@
 #!/bin/bash
 
-PACKAGE=$(basename $(pwd))
+PACKAGE=hatari
 VERSION=2.0.0
-SOURCE=http://download.tuxfamily.org/hatari/${VERSION}/${PACKAGE}-${VERSION}.tar.bz2
+URL=http://download.tuxfamily.org/hatari/${VERSION}/hatari-${VERSION}.tar.bz2
+ARCHIVE=
+SOURCE=
 
-sudo apt -y install cmake portaudio19-dev libportmidi-dev libreadline-dev
+export PACKAGE VERSION URL ARCHIVE SOURCE
 
-wget ${SOURCE}
-
-mv ${PACKAGE}-${VERSION}.tar.bz2 ${PACKAGE}_${VERSION}.orig.tar.bz2
-tar xf ${PACKAGE}_${VERSION}.orig.tar.bz2
-
-cd ${PACKAGE}-${VERSION}
-dh_make -s -y
-cat ../control > debian/control
-cat ../rules >> debian/rules
-cp ../tos.img src/
-dpkg-buildpackage -b
+../common.sh
 
 exit 0
