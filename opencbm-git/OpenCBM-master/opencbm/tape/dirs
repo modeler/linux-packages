@@ -1,8 +1,0 @@
-DIRS= \
-	lib      \
-	tapread  \
-	tapwrite \
-	tapview  \
-	cap2tap  \
-	tap2cap  \
-	tapcontrol

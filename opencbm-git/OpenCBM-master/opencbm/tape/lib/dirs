@@ -1,4 +1,0 @@
-DIRS= \
-    misc    \
-    cap     \
-    tap-cbm
