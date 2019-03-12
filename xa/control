@@ -1,7 +1,7 @@
 Source: xa
 Section: development
 Priority: extra
-Maintainer: Dan Tootill <dan@unknown
+Maintainer: Dan Tootill <dan@unknown>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.8
 Homepage: http://www.floodgap.com/retrotech/xa/

@@ -1,7 +1,7 @@
 Source: acme-crossass
 Section: devel
 Priority: optional
-Maintainer: Dan Tootill <dan@unknown
+Maintainer: Dan Tootill <dan@unknown>
 Build-Depends: debhelper (>=9)
 Standards-Version: 3.9.6
 Homepage: https://sourceforge.net/p/acme-crossass
