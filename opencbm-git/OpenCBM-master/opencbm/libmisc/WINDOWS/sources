@@ -1,0 +1,24 @@
+
+TARGETNAME=libmisc
+TARGETPATH=../../../bin
+TARGETTYPE=LIBRARY
+
+INCLUDES=./;../;../../include;../../include/WINDOWS
+
+C_DEFINES=$(C_DEFINES) -DHAVE_LIBUSB0=0 -DHAVE_LIBUSB1=1 -DHAVE_LIBUSB_1_0=1
+
+SOURCES= \
+	../configuration.c \
+	dynlibusb.c        \
+	../usbcommon0.c \
+	formaterrormessage.c \
+	getpluginaddress.c \
+	perfeval.c \
+	registry.c \
+	../statedebug.c \
+	../libstring.c
+
+UMTYPE=console
+#UMBASE=0x100000
+
+USE_MSVCRT=1

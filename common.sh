@@ -46,6 +46,8 @@ debian)
 FILETYPE=$(awk -F. '{print $NF}' <<< ${ARCHIVE} )
 if [[ "${FILETYPE}" == "zip" ]]; then
   test -d ${SOURCE} || unzip ${ARCHIVE}
+  # Create a backup file to match what dh_make is expecting.
+  tar cvf - ${SOURCE} | gzip > ${PACKAGE}_${VERSION}.orig.tar.gz
 elif [[ "${FILETYPE}" == "bz2" ]]; then
   test -d ${SOURCE} || tar xvf ${ARCHIVE}
   # Create a backup file to match what dh_make is expecting.
