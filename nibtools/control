@@ -1,0 +1,14 @@
+Source: nibtools
+Section: misc
+Priority: optional
+Maintainer: Dan Tootill <dan@unknown>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: http://c64preservation.com/nibtools
+#Vcs-Git: https://anonscm.debian.org/collab-maint/nibtools.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/nibtools.git
+
+Package: nibtools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Commodore 1541/1571 Disk Image Nibbler

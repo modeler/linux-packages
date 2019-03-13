@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PACKAGE=acme-crossass
+PACKAGE=nibtools
 VERSION=svn
-URL=https://svn.code.sf.net/p/acme-crossass/code-0/trunk
+URL=https://c64preservation.com/svn/nibtools/trunk
 ARCHIVE=
-SOURCE=src
+SOURCE=
 
 export PACKAGE VERSION URL ARCHIVE SOURCE
 

@@ -1,0 +1,6 @@
+nibconv /usr/bin
+nibread /usr/bin
+nibrepair /usr/bin
+nibscan /usr/bin
+nibsrqtest /usr/bin
+nibwrite /usr/bin

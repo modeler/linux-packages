@@ -8,17 +8,17 @@ if [[ "${ARCHIVE}" == "" ]]; then
 fi
 
 if [[ "${VERSION}" == "svn" ]]; then
-  svn co ${URL} tmp | tee svn.log
+  svn co ${URL} ${ARCHIVE} | tee svn.log
   # Redefine version based on SVN commit.
   VERSION=$(awk '/^Checked out revision/ {print $4}' svn.log | tr -d .)
   # Redefine the name of the source directory based on new version info.
   SOURCE=${PACKAGE}-${VERSION}
-  mv tmp/${ARCHIVE} ${SOURCE}
+  mv ${ARCHIVE} ${SOURCE}
   # Redefine the name of the archive file based on new version info.
   ARCHIVE=${PACKAGE}-${VERSION}.tar.gz
   # Create an archive file from source code we pulled from SVN.
   tar cf - ${SOURCE} | gzip > ${ARCHIVE}
-  rm -rf tmp .svn svn.log
+  rm -rf .svn svn.log
 else
   test -f ${ARCHIVE} || wget --content-disposition ${URL}
 fi
