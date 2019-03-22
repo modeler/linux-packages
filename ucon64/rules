@@ -1,0 +1,5 @@
+override_dh_auto_configure:
+	cd src && ./configure
+
+override_dh_auto_build:
+	cd src && $(MAKE)
