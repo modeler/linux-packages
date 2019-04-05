@@ -1,1 +1,1 @@
-A handful of scripts for building retro-computing / emulator packages for mainly Debian and Arch Linux distributions.
+A handful of scripts for easily building add-on packages for Debian, Arch Linux and Red Hat based distributions. Mostly retro-computing / emulators.
