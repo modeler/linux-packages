@@ -2,7 +2,7 @@
 
 PACKAGE=makemkv-oss
 VERSION=1.14.3
-URL=http://www.makemkv.com/download/makemkv-oss-${version}.tar.gz
+URL=http://www.makemkv.com/download/makemkv-oss-${VERSION}.tar.gz
 ARCHIVE=
 SOURCE=
 

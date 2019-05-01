@@ -2,7 +2,7 @@
 
 PACKAGE=makemkv-bin
 VERSION=1.14.3
-URL=http://www.makemkv.com/download/makemkv-bin-${version}.tar.gz
+URL=http://www.makemkv.com/download/makemkv-bin-${VERSION}.tar.gz
 ARCHIVE=
 SOURCE=
 
