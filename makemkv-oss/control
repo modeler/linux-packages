@@ -1,0 +1,22 @@
+Source: makemkv-oss
+Section: video
+Priority: optional
+Maintainer: Dan Tootill <dan@unknown>
+Build-Depends: debhelper (>= 9), autotools-dev, libc6-dev, libssl-dev, libexpat1-dev, libavcodec-dev, libgl1-mesa-dev, qtbase5-dev
+Standards-Version: 3.9.8
+Homepage: http://www.makemkv.com
+#Vcs-Git: https://anonscm.debian.org/collab-maint/makemkv-oss.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/makemkv-oss.git
+
+Package: makemkv-oss
+Architecture: any
+Description: DVD and Blu-ray to MKV Converter and Network Streamer
+ MakeMKV is your one-click solution to convert video that you own into free and
+ patents-unencumbered format that can be played everywhere. MakeMKV is a format
+ converter, otherwise called "transcoder". It converts the video clips from
+ proprietary (and usually encrypted) disc into a set of MKV files, preserving
+ most information but not changing it in any way. The MKV format can store
+ multiple video/audio tracks with all meta-information and preserve chapters.
+ There are many players that can play MKV files nearly on all platforms, and
+ there are tools to convert MKV files to many formats, including DVD and
+ Blu-ray discs.
