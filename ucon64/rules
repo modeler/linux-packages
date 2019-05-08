@@ -3,4 +3,4 @@ override_dh_auto_configure:
 
 override_dh_auto_build:
 	patch src/Makefile -i ../Makefile.patch
-	cd src && $(MAKE)
+	cd src && DEB_CFLAGS_STRIP="-Werror=format-security" $(MAKE)

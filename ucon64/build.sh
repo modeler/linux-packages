@@ -7,6 +7,7 @@ ARCHIVE=
 SOURCE=ucon64-2.1.0-src
 
 export PACKAGE VERSION URL ARCHIVE SOURCE
+export DEB_CFLAGS_STRIP="-Werror=format-security"
 
 ../common.sh
 
