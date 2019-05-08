@@ -4,3 +4,5 @@ override_dh_auto_configure:
 override_dh_auto_build:
 	patch src/Makefile -i ../Makefile.patch
 	cd src && $(MAKE)
+
+override_dh_auto_install:
