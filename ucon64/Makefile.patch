@@ -1,0 +1,4 @@
+243c243
+< 	cd libdiscmage && CFLAGS=$(CFLAGS0) LDFLAGS=$(LDFLAGS0) $(MAKE)
+---
+> 	cd libdiscmage && CFLAGS="$(CFLAGS0)" LDFLAGS="$(LDFLAGS0)" $(MAKE)
