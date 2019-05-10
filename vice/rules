@@ -3,6 +3,4 @@ override_dh_auto_configure:
 
 override_dh_auto_install:
 	test -r ./mkinstalldirs || ln -s /usr/share/automake-1.15/mkinstalldirs
-	sudo mkdir -p /home/dan/.fonts /usr/lib64/vice/fonts
-	fc-cache 
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/vice

@@ -8,6 +8,9 @@ SOURCE=
 
 export PACKAGE VERSION URL ARCHIVE SOURCE
 
+test -d ~/.fonts || mkdir -p ~/.fonts
+fc-cache
+
 ../common.sh
 
 exit 0
