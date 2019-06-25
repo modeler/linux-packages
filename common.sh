@@ -20,7 +20,7 @@ if [[ "${VERSION}" == "svn" ]]; then
   tar cf - ${SOURCE} | gzip > ${ARCHIVE}
   rm -rf .svn svn.log
 else
-  test -f ${ARCHIVE} || wget --content-disposition ${URL}
+  test -f ${ARCHIVE} || wget ${URL} -O ${ARCHIVE}
 fi
 
 # If no name has been given to the source directory yet, set it to default.
