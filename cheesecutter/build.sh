@@ -1,10 +1,10 @@
 #!/bin/bash
 
 PACKAGE=cheesecutter
-VERSION=2.9b3
-URL=https://github.com/theyamo/CheeseCutter/archive/v2.9-beta-3.tar.gz
-ARCHIVE=CheeseCutter-2.9-beta-3.tar.gz
-SOURCE=CheeseCutter-2.9-beta-3
+VERSION=2.9b
+URL=https://github.com/theyamo/CheeseCutter/archive/95ed318c6864485021d63ba1f2570dae7d500824.zip
+ARCHIVE=
+SOURCE=CheeseCutter-95ed318c6864485021d63ba1f2570dae7d500824
 
 export PACKAGE VERSION URL ARCHIVE SOURCE
 

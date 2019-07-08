@@ -1,1 +1,0 @@
-sed -i '21iimport std.algorithm : sort;' ./src/ui/dialogs.d
