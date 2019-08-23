@@ -3,4 +3,4 @@ override_dh_auto_clean:
 	$(MAKE) clean
 
 override_dh_auto_configure:
-	./configure --prefix=/usr
+	./configure --prefix=/usr --disable-wayland

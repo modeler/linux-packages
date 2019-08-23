@@ -1,0 +1,6 @@
+override_dh_auto_configure:
+	sh ./autogen.sh
+	CFLAGS="-g -O2" ./configure --prefix=/usr
+
+override_dh_auto_build:
+	$(MAKE)

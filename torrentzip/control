@@ -1,0 +1,16 @@
+Source: torrentzip
+Section: utils
+Priority: optional
+Maintainer: Dan Tootill <dan@unknown>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://sourceforge.net/p/torrentzip
+#Vcs-Git: git://anonscm.debian.org/collab-maint/acme.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/acme.git
+
+Package: torrentzip
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: TorrentZip is a replacement for MameZip.
+ The goal of the program is to use standard values when creating zips to create
+ identical files over multiple systems.
