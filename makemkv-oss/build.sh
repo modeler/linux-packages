@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PACKAGE=makemkv-oss
-VERSION=1.14.3
+VERSION=1.14.7
 URL=http://www.makemkv.com/download/makemkv-oss-${VERSION}.tar.gz
 ARCHIVE=
 SOURCE=

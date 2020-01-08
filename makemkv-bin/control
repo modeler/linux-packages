@@ -2,7 +2,7 @@ Source: makemkv-bin
 Section: video
 Priority: optional
 Maintainer: Dan Tootill <dan@unknown>
-Build-Depends: debhelper (>= 9), libc6-i386, makemkv-oss
+Build-Depends: debhelper (>= 9), libc6-i386, makemkv-oss, curl
 Standards-Version: 3.9.8
 Homepage: http://www.makemkv.com
 #Vcs-Git: https://anonscm.debian.org/collab-maint/makemkv-bin.git
