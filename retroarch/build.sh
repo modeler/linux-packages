@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PACKAGE=retroarch
-VERSION=1.8.2
+VERSION=1.8.8
 URL=https://github.com/libretro/RetroArch/archive/v${VERSION}.tar.gz
 ARCHIVE=RetroArch-${VERSION}.tar.gz
 SOURCE=RetroArch-${VERSION}
