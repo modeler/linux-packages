@@ -1,0 +1,6 @@
+override_dh_auto_clean:
+	touch config.mk
+	$(MAKE) clean
+
+override_dh_auto_configure:
+	CFLAGS='-mfpu=neon -mtune=cortex-a72 -march=armv8-a' ./configure --prefix=/usr --disable-opengl1 --enable-neon --enable-udev --enable-floathard --enable-opengles3 --enable-opengles --disable-videocore --disable-pulse --disable-oss
