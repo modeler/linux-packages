@@ -3,7 +3,7 @@ override_dh_auto_clean:
 	$(MAKE) clean
 
 override_dh_auto_configure:
-	./configure \
+	CFLAGS='-mfpu=neon' ./configure \
 	--prefix=/usr \
 	--disable-cg \
 	--disable-jack \
@@ -16,6 +16,7 @@ override_dh_auto_configure:
 	--disable-wayland \
 	--disable-x11 \
 	--disable-opengl1 \
+	--enable-neon \
 	--enable-dispmanx \
 	--enable-opengles \
 	--enable-floathard \
