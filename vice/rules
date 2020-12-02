@@ -1,5 +1,5 @@
 override_dh_auto_configure:
-	./configure --prefix=/usr --enable-native-gtk3ui --enable-external-ffmpeg
+	./configure --prefix=/usr --enable-native-gtk3ui --enable-external-ffmpeg --enable-cpuhistory
 
 override_dh_auto_install:
 	test -r ./mkinstalldirs || ln -s /usr/share/automake-1.15/mkinstalldirs
