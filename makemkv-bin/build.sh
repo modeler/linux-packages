@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PACKAGE=makemkv-bin
-VERSION=1.14.7
+VERSION=1.15.4
 URL=http://www.makemkv.com/download/makemkv-bin-${VERSION}.tar.gz
 ARCHIVE=
 SOURCE=
