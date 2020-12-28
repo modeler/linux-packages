@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PACKAGE=vice
-VERSION=3.4
+VERSION=3.5
 URL=http://sourceforge.net/projects/vice-emu/files/releases/vice-${VERSION}.tar.gz/download
 ARCHIVE=vice-${VERSION}.tar.gz
 SOURCE=
