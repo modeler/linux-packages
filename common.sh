@@ -75,6 +75,7 @@ for n in $(grep "^Build-Depends:" debian/control | tr -d ","); do
   fi
 done
 sudo apt-get -y install ${DEPENDS[*]} || exit 1
+echo "10" > debian/compat
 dpkg-buildpackage -b
 ;;
 
