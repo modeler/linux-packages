@@ -1,9 +1,8 @@
 #!/bin/bash
 
 PACKAGE=exomizer
-VERSION=3.0.2
-#URL=https://bitbucket.org/magli143/exomizer/wiki/downloads/exomizer-${VERSION}.zip
-URL=https://bitbucket.org/magli143/exomizer/wiki/downloads/exomizer-3.0.2.zip
+VERSION=3.1.1
+URL=https://bitbucket.org/magli143/exomizer/wiki/downloads/exomizer-${VERSION}.zip
 ARCHIVE=
 SOURCE=src
 
