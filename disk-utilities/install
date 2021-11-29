@@ -1,0 +1,7 @@
+libdisk/libdisk.so.0.0 /usr/lib
+adf/adfbb /usr/bin
+adf/adfread /usr/bin
+adf/adfwrite /usr/bin
+disk-analyse/disk-analyse /usr/bin
+scp/scp_dump /usr/bin
+scp/scp_write /usr/bin

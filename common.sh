@@ -67,6 +67,7 @@ dh_make -s -y
 test -f ../install && cat ../install > debian/install
 test -f ../control && sed "s@_KERNEL_@$(uname -r)@g" ../control > debian/control
 test -f ../rules && cat ../rules >> debian/rules
+test -f ../links && cat ../links >> debian/${PACKAGE}.links
 # Install dependencies.
 DEPENDS=()
 for n in $(grep "^Build-Depends:" debian/control | tr -d ","); do
