@@ -1,0 +1,4 @@
+build/hxcfe /usr/bin
+build/hxcfloppyemulator /usr/bin
+build/libhxcfe.so /usr/lib
+build/libusbhxcfe.so /usr/lib

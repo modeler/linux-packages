@@ -1,0 +1,17 @@
+Source: hxcfloppyemulator
+Section: misc
+Priority: optional
+Maintainer: Dan Tootill <dan@unknown>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://sourceforge.net/projects/hxcfloppyemulator/
+#Vcs-Git: git://anonscm.debian.org/collab-maint/hxcfloppyemulator.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/hxcfloppyemulator.git
+
+Package: hxcfloppyemulator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: HxC Floppy Drive Emulator
+ The aim of HxC Floppy Emulator project is to provide software and hardware
+ solutions to replace old floppy disk drives and floppy support with modern
+ solutions (USB, SDCard, network,...)
