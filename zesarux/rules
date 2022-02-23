@@ -1,0 +1,9 @@
+override_dh_auto_configure:
+	cd src && ./configure --prefix=/usr
+
+override_dh_auto_build:
+	cd src && $(MAKE)
+
+override_dh_auto_install:
+	sed -i "s|INSTALL_PREFIX.*|INSTALL_PREFIX \"$(CURDIR)/debian/zesarux/usr\"|" src/compileoptions.h
+	cd src && $(MAKE) install

@@ -1,0 +1,41 @@
+Source: zesarux
+Section: games
+Priority: optional
+Maintainer: Dan Tootill <dan@unknown>
+Build-Depends: debhelper (>= 9), autotools-dev, cmake, libsdl2-dev, libpng-dev, portaudio19-dev, libportmidi-dev, libreadline-dev, capsimage
+Standards-Version: 3.9.8
+Homepage: https://github.com/chernandezba/zesarux
+#Vcs-Git: https://anonscm.debian.org/collab-maint/hatari.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/hatari.git
+
+Package: zesarux
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: ZEsarUX - ZX Second-Emulator And Released for UniX
+ It's a ZX Machines Emulator for UNIX based operating systems (and Windows),
+ including all the Sinclair computers:
+ MK14
+ ZX80
+ ZX81
+ ZX Spectrum
+ QL
+ Z88
+ .
+ And also:
+ Timex TS 2068
+ Sam Coupe
+ Pentagon
+ Chloe 140 SE, 280 SE
+ Chrome
+ Prism
+ ZX-Uno
+ ZX-Evolution BaseConf
+ ZX-Evolution TS-Conf
+ ZX Spectrum Next
+ Jupiter Ace
+ Amstrad CPC 464, CPC 4128
+ MSX1
+ Spectravideo 318/328
+ Colecovision
+ Sega SG1000
+ Sega Master System
