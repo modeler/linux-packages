@@ -5,3 +5,4 @@ override_dh_auto_install:
 	mkdir -p $(CURDIR)/debian/opencbm/etc/udev/rules.d
 	mkdir -p $(CURDIR)/debian/opencbm/usr/include
 	$(MAKE) -f LINUX/Makefile install install-plugin-xum1541 DESTDIR=$(CURDIR)/debian/opencbm
+	rm $(CURDIR)/debian/opencbm/etc/ld.so.conf
